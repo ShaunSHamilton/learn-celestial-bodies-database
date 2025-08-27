@@ -1,0 +1,22 @@
+{
+  "name": "learn-celestial-bodies-database",
+  "image": "gitpod/workspace-postgres:2024-01-24-09-19-42",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "installDockerBuildx": false,
+      "installDockerComposeSwitch": false,
+      "moby": false
+    }
+  },
+  "remoteUser": "gitpod",
+  "containerUser": "gitpod",
+  "workspaceFolder": "/workspace/learn-celestial-bodies-database",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/learn-celestial-bodies-database,type=bind",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "CodeRoad.coderoad"
+      ]
+    }
+  }
+}
