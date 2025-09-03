@@ -23,3 +23,8 @@ tasks:
         name: 'Task 0: command'
         triggeredBy:
             - postDevcontainerStart
+    coadroad-setup:
+        command: export CODEROAD_TUTORIAL_URL="https://raw.githubusercontent.com/freeCodeCamp/$(basename "$PWD")/main/tutorial.json"
+        name: 'CodeRoad Setup'
+        triggeredBy:
+            - postEnvironmentStart

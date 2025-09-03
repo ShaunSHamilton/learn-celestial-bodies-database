@@ -1,6 +1,6 @@
 {
   "name": "learn-celestial-bodies-database",
-  "image": "ghcr.io/devcontainers/templates/javascript-node-postgres:4.0.2",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   // "features": {
   //   "ghcr.io/devcontainers/features/docker-in-docker:2": {
   //     "installDockerBuildx": false,
@@ -8,6 +8,11 @@
   //     "moby": false
   //   }
   // },
+  "features": {
+    "ghcr.io/itsmechlark/features/postgresql:1": {
+    },
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
   // "remoteUser": "vscode",
   // "containerUser": "vscode",
   "workspaceFolder": "/workspace/learn-celestial-bodies-database",
