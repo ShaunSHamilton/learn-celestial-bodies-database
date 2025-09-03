@@ -1,9 +1,9 @@
 tasks:
     before-000:
         command: |
-            sudo cp /workspace/project/.freeCodeCamp/.bashrc ~/.bashrc
-            sudo cp /workspace/project/.freeCodeCamp/.psqlrc ~/.psqlrc
-            sudo cp /workspace/project/.freeCodeCamp/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf
+            sudo cp /workspace/learn-celestial-bodies-database/.freeCodeCamp/.bashrc ~/.bashrc
+            sudo cp /workspace/learn-celestial-bodies-database/.freeCodeCamp/.psqlrc ~/.psqlrc
+            sudo cp /workspace/learn-celestial-bodies-database/.freeCodeCamp/pg_hba.conf /etc/postgresql/12/main/pg_hba.conf
             sudo touch /workspace/.bash_history
             sudo chmod -R 777 /workspace
             sudo chown -R postgres:postgres /var/lib/postgresql/12/main
@@ -11,10 +11,10 @@ tasks:
         name: 'Task 0: before'
     command-0:
         command: |
-            sudo rm /workspace/project/CHANGELOG.md
-            sudo rm /workspace/project/coderoad.yaml
-            sudo rm /workspace/project/tutorial.json
-            sudo rm /workspace/project/TUTORIAL.md
+            sudo rm /workspace/learn-celestial-bodies-database/CHANGELOG.md
+            sudo rm /workspace/learn-celestial-bodies-database/coderoad.yaml
+            sudo rm /workspace/learn-celestial-bodies-database/tutorial.json
+            sudo rm /workspace/learn-celestial-bodies-database/TUTORIAL.md
             pg_stop && sudo service postgresql start && echo "SELECT 'CREATE USER freecodecamp WITH CREATEDB' WHERE NOT EXISTS (SELECT FROM pg_catalog.pg_roles WHERE rolname='freecodecamp')\gexec" | psql -U postgres -X
             exit
         dependsOn:
@@ -26,5 +26,6 @@ tasks:
     coadroad-setup:
         command: export CODEROAD_TUTORIAL_URL="https://raw.githubusercontent.com/freeCodeCamp/$(basename "$PWD")/main/tutorial.json"
         name: 'CodeRoad Setup'
+        description: setup env vars
         triggeredBy:
             - postEnvironmentStart
